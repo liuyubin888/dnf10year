@@ -281,7 +281,7 @@ var Index = {
 						"<span class="+ 'n' + day_time[1] +"></span>"+
 					"</div>";
 		$('#role_create_time').html(role_create_time_html);
-		var past_time = data.FirstcInfo.past_time;//过去多少天
+		var past_time = data.FirstcInfo.past_time?data.FirstcInfo.past_time:90;//过去多少天
 		past_time = past_time.toString();
 		past_time = past_time.split('');
 		var role_past_time_html = '';
