@@ -1,3 +1,4 @@
+var isLogin = 1;
 var getResoutObj = {
 	url_prefix : '//svip.game.qq.com/dnf10year/DnfTenYear/getUserInfo',
 	token:'',
@@ -23,12 +24,13 @@ var getResoutObj = {
 		
 		var _this = this;
 		var url = '';
-		var nickname = '';
+		var nickname = 'dabin';
 		if(token){
 			url = _this.url_prefix+'?uin='+''+'&token='+token;
 		}else{
-			var uin = G_USER_INFO.userUin ? G_USER_INFO.userUin : '';
-			nickname = G_USER_INFO.nickName ? G_USER_INFO.nickName : '';
+			// var uin = G_USER_INFO.userUin ? G_USER_INFO.userUin : '';
+			var uin = 3573204127;
+			// nickname = G_USER_INFO.nickName ? G_USER_INFO.nickName : '';
 			url = _this.url_prefix+'?uin='+uin+'&nickname='+encodeURIComponent(nickname);
 		}
 		
@@ -81,4 +83,6 @@ var getResoutObj = {
 		
 	}
 };
+
+getResoutObj.init();
 
