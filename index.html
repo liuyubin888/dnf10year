@@ -233,7 +233,7 @@
     </div>
     </div>
     <span class="icon-next ht">下一页</span>
-    <div class="music">
+    <div class="music" id="musicbtn">
         <audio id="bgm" src="./mp3/bgm.mp3" loop="loop" preload="auto" autoplay="autoplay"></audio>
     </div>
 
@@ -263,16 +263,9 @@
             stayTime:0 //选填项:是否需要统计停留时长boolean；默认是0
         };
         if(typeof(pgvMain)=='function')pgvMain(); //千万不能忘记！
-		
-		document.addEventListener('DOMContentLoaded', function () {  
-			function audioAutoPlay() {  
-				$("#bgm")[0].play();  
-				document.addEventListener("WeixinJSBridgeReady", function () {  
-					$("#bgm")[0].play();  
-				}, false);  
-			}  
-			audioAutoPlay();  
-		});  
+		$(function(){
+			document.getElementById("musicbtn").click();
+		})
     </script>
 </body>
 </html>
