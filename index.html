@@ -269,21 +269,22 @@
 			
 		}, false);
 		
-		function autoPlayAudio1(){
-		　　wx.config({
-		// 塘崔佚連, 軸聞音屎鳩匆嬬聞喘 wx.ready
-		　　　　debug: false,
-		　　　　appId: '',
-		　　　　timestamp: 1,
-		　　　　nonceStr: '',
-		　　　　signature: '',
-		　　　　jsApiList: []
-		　　});
-		　　wx.ready(function() {
-		　　　　$('#bgm')[0].play();
-		　　});
-		}
-		autoPlayAudio1()
+		function audioAutoPlay(id){  
+			var audio = document.getElementById(id),  
+				play = function(){  
+					audio.play();  
+					document.removeEventListener("touchstart",play, false);  
+				};  
+			audio.play();  
+			document.addEventListener("WeixinJSBridgeReady", function () {  
+				play();  
+			}, false);  
+			document.addEventListener('YixinJSBridgeReady', function() {  
+				play();  
+			}, false);  
+			document.addEventListener("touchstart",play, false);  
+		}  
+		audioAutoPlay('bgm');  
     </script>
 </body>
 </html>
