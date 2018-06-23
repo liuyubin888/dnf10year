@@ -26,15 +26,7 @@
             setFont();
         })(window,document);
 		
-		document.addEventListener('DOMContentLoaded', function () {  
-			function audioAutoPlay() {  
-				$("#bgm")[0].play();  
-				document.addEventListener("WeixinJSBridgeReady", function () {  
-					$("#bgm")[0].play();  
-				}, false);  
-			}  
-			audioAutoPlay();  
-		});  
+		
     </script>
 </head>
 <body>
@@ -271,6 +263,16 @@
             stayTime:0 //选填项:是否需要统计停留时长boolean；默认是0
         };
         if(typeof(pgvMain)=='function')pgvMain(); //千万不能忘记！
+		
+		document.addEventListener('DOMContentLoaded', function () {  
+			function audioAutoPlay() {  
+				$("#bgm")[0].play();  
+				document.addEventListener("WeixinJSBridgeReady", function () {  
+					$("#bgm")[0].play();  
+				}, false);  
+			}  
+			audioAutoPlay();  
+		});  
     </script>
 </body>
 </html>
