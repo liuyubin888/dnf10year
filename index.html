@@ -264,7 +264,8 @@
         };
         if(typeof(pgvMain)=='function')pgvMain(); //千万不能忘记！
 		document.addEventListener("WeixinJSBridgeReady", function () {
-			document.getElementById('audio').play();
+			<!-- document.getElementById('bgm').play(); -->
+			$('#bgm')[0].play();
 		}, false);
     </script>
 </body>
