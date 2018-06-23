@@ -79,10 +79,6 @@ var Music = {
         this.btnPlay = $('.music');
         this.event();
         this.play();
-        // if(music.paused){
-        //     this.btnPlay.addClass('pause');
-        // }
-
     },
     event: function(){
         var self = this;

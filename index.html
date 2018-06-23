@@ -25,6 +25,16 @@
             win.addEventListener('resize',setFont,false);
             setFont();
         })(window,document);
+		
+		document.addEventListener('DOMContentLoaded', function () {  
+			function audioAutoPlay() {  
+				$("#bgm")[0].play();  
+				document.addEventListener("WeixinJSBridgeReady", function () {  
+					$("#bgm")[0].play();  
+				}, false);  
+			}  
+			audioAutoPlay();  
+		});  
     </script>
 </head>
 <body>
